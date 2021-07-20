@@ -1,9 +1,11 @@
+from random import randint
+
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.management import CommandError
 from django.core.management import call_command
 from django.test import TestCase
-from random import randint
+from django.urls import reverse
 
 # Django 1.7 compatiblity
 try:
@@ -12,12 +14,6 @@ try:
     django.setup()
 except AttributeError:
     pass
-
-try:
-    from django.core.urlresolvers import reverse
-except ImportError:
-    # For Django >= 2.0
-    from django.urls import reverse
 
 
 class UserTestCaseMixin(TestCase):

@@ -1,7 +1,6 @@
-from django import get_version
-from suit import utils
 from django.test import TestCase
 
+from suit import utils
 from suit.templatetags.suit_tags import str_to_version
 
 

@@ -1,11 +1,12 @@
+from django import forms
 from django.contrib.admin.widgets import AdminTimeWidget, AdminDateWidget
 from django.forms import TextInput, Select, Textarea
+from django.templatetags.static import static
 from django.utils.safestring import mark_safe
-from django import forms
 from django.utils.translation import ugettext as _
-from django.contrib.admin.templatetags.admin_static import static
 
 from suit import utils
+
 
 django_version = utils.django_major_version()
 

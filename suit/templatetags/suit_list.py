@@ -1,26 +1,17 @@
 from copy import copy
 from inspect import getargspec
+
+from urllib.parse import parse_qs
+
 from django import template
 from django.template.loader import get_template
 from django.utils.safestring import mark_safe
 from django.contrib.admin.templatetags.admin_list import result_list
 from django.contrib.admin.views.main import ALL_VAR, PAGE_VAR
 from django.utils.html import escape
+
 from suit.compat import tpl_context_class
 
-try:
-    # Python 3.
-    from urllib.parse import parse_qs
-except ImportError:
-    # Python 2.5+
-    from urlparse import urlparse
-
-    try:
-        # Python 2.6+
-        from urlparse import parse_qs
-    except ImportError:
-        # Python <=2.5
-        from cgi import parse_qs
 
 register = template.Library()
 

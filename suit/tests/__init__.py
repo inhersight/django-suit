@@ -5,6 +5,8 @@ try:
 except Exception:
     pass
 
+from django.test.runner import DiscoverRunner as DjangoTestSuiteRunner
+
 from suit.tests.templatetags.suit_menu import SuitMenuTestCase, \
     SuitMenuAdminRootURLTestCase, SuitMenuAdminI18NURLTestCase, \
     SuitMenuAdminCustomURLTestCase
@@ -15,11 +17,6 @@ from suit.tests.config import ConfigTestCase, ConfigWithModelsTestCase
 from suit.tests.widgets import WidgetsTestCase
 from suit.tests.utils import UtilsTestCase
 
-try:
-    # Django 1.7+
-    from django.test.runner import DiscoverRunner as DjangoTestSuiteRunner
-except ImportError:
-    from django.test.simple import DjangoTestSuiteRunner
 
 
 class NoDbTestRunner(DjangoTestSuiteRunner):
